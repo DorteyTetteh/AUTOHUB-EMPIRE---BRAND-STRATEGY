@@ -1,4 +1,4 @@
- *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --navy:    #0D1B2E;
@@ -812,3 +812,264 @@
     .cover, .section { page-break-after: always; }
     body { background: white; color: black; }
   }
+
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE STYLES
+   Breakpoints: 900px (tablet) · 640px (mobile) · 400px (small)
+═══════════════════════════════════════════════════ */
+
+/* ── TABLET (≤ 900px) ─────────────────────────── */
+@media (max-width: 900px) {
+
+  .cover {
+    padding: 40px 40px;
+  }
+
+  .cover-desc-wrap {
+    gap: 40px;
+  }
+
+  .toc {
+    padding: 64px 40px;
+  }
+
+  .section {
+    padding: 72px 40px;
+  }
+
+  .divider {
+    margin: 0 40px;
+  }
+
+  .doc-footer {
+    padding: 28px 40px;
+  }
+
+  .section-num {
+    font-size: 60px;
+  }
+
+  /* Collapse 3-col grids to 2 */
+  .card-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archetype-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .palette-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pod-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Audience: primary wider + 1 */
+  .audience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Value card: tighten fixed col */
+  .value-card {
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    padding: 36px 36px;
+  }
+
+  .summary-box {
+    padding: 40px 44px;
+  }
+}
+
+
+/* ── MOBILE (≤ 640px) ─────────────────────────── */
+@media (max-width: 640px) {
+
+  /* Cover */
+  .cover {
+    padding: 28px 24px;
+    min-height: 100svh;
+  }
+
+  .cover-top {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cover-main {
+    padding: 36px 0;
+  }
+
+  .cover-desc-wrap {
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 32px;
+    padding-top: 28px;
+  }
+
+  .cover-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .cover-bg-word {
+    align-self: flex-end;
+    font-size: clamp(56px, 18vw, 100px);
+  }
+
+  /* TOC */
+  .toc {
+    padding: 48px 24px;
+  }
+
+  .toc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sections */
+  .section {
+    padding: 52px 24px;
+  }
+
+  .section-header {
+    gap: 18px;
+    margin-bottom: 36px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .section-num {
+    font-size: 44px;
+    flex-shrink: 0;
+  }
+
+  /* All multi-col grids → single column */
+  .card-grid-2,
+  .card-grid-3,
+  .pod-grid,
+  .type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Audience → single column */
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Competitive map → single column */
+  .comp-map {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+
+  /* Value cards → stacked */
+  .value-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 28px 24px;
+  }
+
+  /* Keep archetypes + palette 2-up — they fit fine */
+  .archetype-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .palette-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Card padding */
+  .card {
+    padding: 28px 24px;
+  }
+
+  .aud-card {
+    padding: 30px 22px;
+  }
+
+  .comp-quadrant {
+    padding: 28px 22px;
+    min-height: unset;
+  }
+
+  /* Text blocks */
+  .highlight-block {
+    padding: 20px 22px;
+  }
+
+  .highlight-block p {
+    font-size: 18px;
+  }
+
+  .summary-box {
+    padding: 28px 24px;
+  }
+
+  .summary-text {
+    font-size: 18px;
+  }
+
+  /* Divider */
+  .divider {
+    margin: 0 24px;
+  }
+
+  /* Footer */
+  .doc-footer {
+    padding: 24px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Tagline section inner div override */
+  #tagline > div {
+    padding: 40px 0 !important;
+  }
+
+  /* Typography showcase */
+  .type-display {
+    font-size: 36px;
+  }
+
+  .tw-sample {
+    font-size: 15px;
+  }
+}
+
+
+/* ── SMALL PHONES (≤ 400px) ───────────────────── */
+@media (max-width: 400px) {
+
+  .archetype-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palette-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cover {
+    padding: 22px 18px;
+  }
+
+  .section {
+    padding: 44px 18px;
+  }
+
+  .toc {
+    padding: 40px 18px;
+  }
+
+  .doc-footer {
+    padding: 20px 18px;
+  }
+
+  .section-num {
+    font-size: 38px;
+  }
+}
